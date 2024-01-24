@@ -1,16 +1,24 @@
 <template>
     <div>
-        <h1>Home</h1>
-        <v-container fluid  data-cy="char-card-list">
-            <v-row dense v-if="coffeeList.length">
-                <v-col v-for=" coffee in coffeeList" cols="6" md="3" >
-                    <CoffeeCard :coffee="coffee" />
-                </v-col>
-            </v-row>
-            <v-row v-else justify="center">
-                    <h1>No Results</h1>
-            </v-row>
-        </v-container>
+        <v-row>
+            <v-col cols="8">
+                <v-container fluid data-cy="char-card-list">
+                    <v-row dense v-if="coffeeList.length">
+                        <v-col v-for=" coffee in coffeeList" cols="6" md="4">
+                            <CoffeeCard :coffee="coffee" />
+                        </v-col>
+                    </v-row>
+                    <v-row v-else justify="center">
+                        <h1>No Results</h1>
+                    </v-row>
+                </v-container>
+            </v-col>
+            <v-col cols="4">
+                <CartComponent />
+
+            </v-col>
+        </v-row>
+
     </div>
 </template>
 
@@ -24,6 +32,4 @@ onMounted(async () => {
 
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -1,7 +1,12 @@
 <template>
-    <div>
-        <h1>Cart</h1>
-    </div>
+   <v-row justify="center">
+    <v-col cols="7" >
+        <CartComponent />
+
+    </v-col>
+
+   </v-row>
+    
 </template>
 
 <script setup>

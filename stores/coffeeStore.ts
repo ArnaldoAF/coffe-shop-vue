@@ -6,7 +6,10 @@ export const useCoffeeStore = defineStore("coffee", () => {
   const loading = ref(false);
 
   function initCoffeeList() {
-    coffeeList.value = CoffeeListData;
+    setTimeout(() => {
+      coffeeList.value = CoffeeListData;
+
+    }, 1000)
   }
 
   return {

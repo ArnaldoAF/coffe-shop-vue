@@ -22,9 +22,21 @@ export const useCartStore = defineStore("cart", () => {
     }
   }
 
+  function setCoffeeQtdOnCart(coffeeElement: CartCoffeeElement) {
+    const coffeeIndex = cartItems.value.findIndex(cartItem => cartItem.coffee.id === coffeeElement.coffee.id)
+    console.log(coffeeIndex)
+    console.log(cartItems.value)
+
+    if(coffeeIndex > -1) {
+      const {qtd} = coffeeElement
+      cartItems.value[coffeeIndex].qtd = qtd
+    }
+  }
+
   return {
     cartItems,
     initCartItems,
     addCoffeeToCart,
+    setCoffeeQtdOnCart,
   };
 });

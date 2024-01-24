@@ -4,9 +4,11 @@
     </template>  
 
         <v-card-text>
-        This is content
-        <p v-for="cartItem in cartItems">{{ cartItem }}
-        </p>
+        <v-row dense v-if="cartItems.length">
+                        <v-col v-for="cartItem in cartItems" cols="12" md="12">
+                            <CartCoffeeCard :cartCoffeeProp="cartItem" />
+                        </v-col>
+                    </v-row>
       </v-card-text>   
     </v-card>
 </template>

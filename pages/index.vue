@@ -1,7 +1,16 @@
 <template>
     <div>
         <h1>Home</h1>
-        {{ coffeeList }}
+        <v-container fluid  data-cy="char-card-list">
+            <v-row dense v-if="coffeeList.length">
+                <v-col v-for=" coffee in coffeeList" cols="6" md="3" >
+                    <CoffeeCard :coffee="coffee" />
+                </v-col>
+            </v-row>
+            <v-row v-else justify="center">
+                    <h1>No Results</h1>
+            </v-row>
+        </v-container>
     </div>
 </template>
 

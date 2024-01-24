@@ -1,9 +1,12 @@
 <template>
-    <v-card  class="mt-6">
-        <v-card-title>Carrinho</v-card-title>    
+    <v-card  class="mt-6" prepend-icon="mdi-cart">
+        <template v-slot:title>Carrinho
+    </template>  
 
         <v-card-text>
         This is content
+        <p v-for="cartItem in cartItems">{{ cartItem }}
+        </p>
       </v-card-text>   
     </v-card>
 </template>
@@ -12,9 +15,6 @@
 const cartCoffeeListStore = useCartStore()
 const { cartItems } = storeToRefs(cartCoffeeListStore)
 
-onMounted(async () => {
-    await cartCoffeeListStore.initCoffeeList();
-});
 
 </script>
 

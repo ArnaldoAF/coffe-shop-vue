@@ -11,7 +11,17 @@ function increment() {
 }
 function decrement() {
     if (qtd.value > 0) qtd.value = qtd.value - 1
+}
 
+const cartStore = useCartStore()
+
+function addToStoreCart() {
+    const newCoffeeObject = {
+        coffee,
+        qtd: qtd.value
+    }
+    cartStore.addCoffeeToCart(newCoffeeObject)
+    qtd.value = 0
 }
 
 </script>
@@ -44,7 +54,7 @@ function decrement() {
             <v-text-field v-model="qtd" append-icon="mdi-plus" prepend-icon="mdi-minus" @click:append="increment"
                 @click:prepend="decrement" readonly width="5" variant="outlined" max-width="10" class="d-flex align-center justify-center text-center">
             </v-text-field>
-            <v-btn density="default" elevation="24" icon="mdi-cart" variant="elevated" class=""></v-btn>
+            <v-btn density="default" elevation="24" icon="mdi-cart" variant="elevated" class="" @click="addToStoreCart"></v-btn>
         </v-card-actions>
 
     </v-card>

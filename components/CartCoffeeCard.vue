@@ -39,7 +39,7 @@ const { cartCoffeeProp } = defineProps<{
     cartCoffeeProp: CartCoffeeElement
 }>()
 const {coffee, qtd} = cartCoffeeProp
-const qtdLocal = ref(qtd);
+const qtdLocal = toRef(cartCoffeeProp, 'qtd');
 
 
 const formattedPrice = computed(() => {
@@ -52,11 +52,13 @@ const formattedPrice = computed(() => {
 
 function increment() {
     qtdLocal.value = qtdLocal.value + 1
+    // qtd.value = qtd.value + 1
     setCoffeeQtdOnStoreCart()
 
 }
 function decrement() {
     if (qtdLocal.value > 1) qtdLocal.value = qtdLocal.value - 1
+    // if (qtd.value > 1) qtd.value = qtd.value - 1
     setCoffeeQtdOnStoreCart()
 }
 

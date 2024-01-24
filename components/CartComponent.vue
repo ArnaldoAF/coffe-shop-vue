@@ -9,12 +9,7 @@
                             <CartCoffeeCard :cartCoffeeProp="cartItem" />
                         </v-col>
                     </v-row>
-        <div v-for="cartItem in cartItems">
-            <hr />
-            <p>{{ cartItem.coffee.name }}</p>
-            <p>{{cartItem.coffee.id}}</p>
-            <p>{{cartItem.qtd}}</p>
-        </div>
+        
       </v-card-text>   
     </v-card>
 </template>

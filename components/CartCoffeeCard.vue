@@ -42,8 +42,7 @@ const {coffee, qtd} = cartCoffeeProp
 const qtdLocal = ref(qtd);
 
 
-
-    const formattedPrice = computed(() => {
+const formattedPrice = computed(() => {
   return (coffee.price * qtdLocal.value)
     .toLocaleString('pt-BR', {
       style: 'currency',
@@ -72,7 +71,7 @@ function setCoffeeQtdOnStoreCart() {
 }
 
 function deleteCoffeeFromCartStore() {
-
+    cartStore.deleteCoffeeFromCart(coffee.id)
 }
 
 </script>

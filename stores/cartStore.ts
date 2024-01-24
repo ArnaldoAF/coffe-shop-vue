@@ -10,8 +10,6 @@ export const useCartStore = defineStore("cart", () => {
 
   function addCoffeeToCart(coffeeElement: CartCoffeeElement) {
     const coffeeIndex = cartItems.value.findIndex(cartItem => cartItem.coffee.id === coffeeElement.coffee.id)
-    console.log(coffeeIndex)
-    console.log(cartItems.value)
 
     if(coffeeIndex > -1) {
       const {qtd} = coffeeElement
@@ -24,12 +22,23 @@ export const useCartStore = defineStore("cart", () => {
 
   function setCoffeeQtdOnCart(coffeeElement: CartCoffeeElement) {
     const coffeeIndex = cartItems.value.findIndex(cartItem => cartItem.coffee.id === coffeeElement.coffee.id)
-    console.log(coffeeIndex)
-    console.log(cartItems.value)
 
     if(coffeeIndex > -1) {
       const {qtd} = coffeeElement
       cartItems.value[coffeeIndex].qtd = qtd
+    }
+  }
+
+  function deleteCoffeeFromCart(coffeeElementId: number) {
+    const coffeeIndex = cartItems.value.findIndex(cartItem => cartItem.coffee.id === coffeeElementId)
+    const coffeeFind = cartItems.value.find(cartItem => cartItem.coffee.id === coffeeElementId)
+    console.log("deleteCoffeeFromCart")
+    console.log(coffeeIndex)
+    console.log(coffeeFind)
+
+    if(coffeeIndex > -1) {
+      // cartItems.value.splice(coffeeIndex, 1)
+      cartItems.value = cartItems.value.filter(cartItem => cartItem.coffee.id !== coffeeElementId)
     }
   }
 
@@ -38,5 +47,6 @@ export const useCartStore = defineStore("cart", () => {
     initCartItems,
     addCoffeeToCart,
     setCoffeeQtdOnCart,
+    deleteCoffeeFromCart,
   };
 });

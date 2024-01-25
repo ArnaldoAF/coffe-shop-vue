@@ -4,7 +4,7 @@
             color="green-darken-4"
             theme="dark"
           >
-            <div class="d-flex flex-no-wrap justify-space-between">
+            <div class="d-flex flex-no-wrap ">
                 <v-avatar
                 class="ma-3"
                 size="70"
@@ -12,14 +12,15 @@
               >
                 <v-img :src=coffee.photo></v-img>
               </v-avatar>
-              <div>
+              <div class="w-100 justify-space-between">
+
                 <v-card-title class="text-h5 text-wrap">
                     {{ coffee.name }}
                 </v-card-title>
 
                 <v-card-subtitle class="text-h6 text-wrap">{{ formattedPrice }}</v-card-subtitle>
 
-                <v-card-actions class="">
+                <v-card-actions class=" d-flex justify-space-between">
                     <v-text-field v-model="qtdLocal" append-icon="mdi-plus" prepend-icon="mdi-minus" @click:append="increment"
                         @click:prepend="decrement" readonly width="5" variant="outlined" max-width="10" class="d-flex align-center justify-center text-center">
                     </v-text-field>

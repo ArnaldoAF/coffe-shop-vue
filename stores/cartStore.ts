@@ -71,6 +71,10 @@ export const useCartStore = defineStore("cart", () => {
     }
   }
 
+  function cleanCart() {
+    cartItems.value = []
+  }
+
   return {
     cartItems,
     initCartItems,
@@ -78,6 +82,7 @@ export const useCartStore = defineStore("cart", () => {
     setCoffeeQtdOnCart,
     deleteCoffeeFromCart,
     totalQtdItems,
-    totalValueItems
+    totalValueItems,
+    cleanCart
   };
 });

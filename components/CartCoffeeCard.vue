@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-card
-            color="#1F7087"
+            color="green-darken-4"
             theme="dark"
           >
             <div class="d-flex flex-no-wrap justify-space-between">
@@ -23,7 +23,7 @@
                     <v-text-field v-model="qtdLocal" append-icon="mdi-plus" prepend-icon="mdi-minus" @click:append="increment"
                         @click:prepend="decrement" readonly width="5" variant="outlined" max-width="10" class="d-flex align-center justify-center text-center">
                     </v-text-field>
-                    <v-btn density="default" elevation="24" icon="mdi-trash-can" variant="elevated" class="" @click="deleteCoffeeFromCartStore"></v-btn>
+                    <v-btn density="default" elevation="24" icon="mdi-trash-can" variant="elevated" class="bg-red-darken-1" @click="deleteCoffeeFromCartStore"></v-btn>
                 </v-card-actions>
               </div>
 

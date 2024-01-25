@@ -14,8 +14,11 @@
                 </v-container>
             </v-col>
             <v-col cols="4">
+                
                 <CartComponent />
-
+                <v-btn prepend-icon="mdi-send" size="x-large" class="w-100 mt-3 bg-green-darken-4">
+  Fazer Checkout
+</v-btn>
             </v-col>
         </v-row>
 

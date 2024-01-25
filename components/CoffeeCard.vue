@@ -26,7 +26,7 @@
             <v-text-field v-model="qtd" append-icon="mdi-plus" prepend-icon="mdi-minus" @click:append="increment"
                 @click:prepend="decrement" readonly width="5" variant="outlined" max-width="10" class="d-flex align-center justify-center text-center">
             </v-text-field>
-            <v-btn density="default" elevation="24" icon="mdi-cart" variant="elevated" class="" @click="addToStoreCart"></v-btn>
+            <v-btn density="default" elevation="24" icon="mdi-cart" variant="elevated" class="bg-green-darken-4" @click="addToStoreCart"></v-btn>
         </v-card-actions>
 
     </v-card>
